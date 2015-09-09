@@ -94,36 +94,44 @@ int main(int argc, const char * argv[])
 //    bst->prettyPrint();
     TTTree<int>* jesusTakeTheWheel = new TTTree<int>();
     
-//    jesusTakeTheWheel->insert23(10);
-//    jesusTakeTheWheel->insert23(20);
-//    jesusTakeTheWheel->insert23(5);
-//    jesusTakeTheWheel->insert23(30);
-//    jesusTakeTheWheel->insert23(50);
-//    jesusTakeTheWheel->insert23(1);
-//    jesusTakeTheWheel->insert23(23);
-//    jesusTakeTheWheel->insert23(19);
-//    jesusTakeTheWheel->insert23(2);
-//    jesusTakeTheWheel->insert23(2);
-//    jesusTakeTheWheel->insert23(2);
-//    jesusTakeTheWheel->insert23(70);
-//    jesusTakeTheWheel->insert23(40);
-//    jesusTakeTheWheel->insert23(80);
-//    jesusTakeTheWheel->insert23(90);
+    jesusTakeTheWheel->insert23(10);
+    jesusTakeTheWheel->insert23(20);
+    jesusTakeTheWheel->insert23(5);
+    jesusTakeTheWheel->insert23(30);
+    jesusTakeTheWheel->insert23(50);
+    jesusTakeTheWheel->insert23(1);
+    jesusTakeTheWheel->insert23(23);
+    jesusTakeTheWheel->insert23(19);
+    jesusTakeTheWheel->insert23(2);
+    jesusTakeTheWheel->insert23(2);
+    jesusTakeTheWheel->insert23(2);
+    jesusTakeTheWheel->insert23(70);
+    jesusTakeTheWheel->insert23(40);
+    jesusTakeTheWheel->insert23(80);
+    jesusTakeTheWheel->insert23(90);
     
    // ========PRUEBA CON 100,000 NUMEROS======
-    srand((int) time(NULL));
-    
-    for(int i=0; i<100000; i++)
-    {
-        jesusTakeTheWheel->insert23(rand()%1000);
-    }
+//    srand((int) time(NULL));
+//    
+//    for(int i=0; i<100000; i++)
+//    {
+//        jesusTakeTheWheel->insert23(rand()%1000);
+//    }
 
     if(jesusTakeTheWheel->isTT(jesusTakeTheWheel->getRoot()))
-        std::cout << "si es 2-3 y su nivel es " << jesusTakeTheWheel->getHeight(jesusTakeTheWheel->getRoot()) <<std::endl;
+        std::cout << "si es 2-3 y su nivel es " << jesusTakeTheWheel->getHeight(jesusTakeTheWheel->getRoot())+1 <<std::endl;
     else
     {
         std::cout << "no es 2-3" << std::endl;
     }
+    
+    int n =10;
+    if(jesusTakeTheWheel->findNode(jesusTakeTheWheel->getRoot(), n))
+    {
+        std::cout << "Si se encontro " << n << std::endl;
+    }
+    else
+        std::cout << "No se encontro " << n << std::endl;
 
     return 0;
 }

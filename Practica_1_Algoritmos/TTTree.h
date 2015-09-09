@@ -89,6 +89,9 @@ public:
     bool hasFreeChildren(TTNode<T>* node);
     bool isTT(TTNode<T>* node);
     void getLeafLevels(TTNode<T>* node);
+    bool getNodeKeys(TTNode<T>* node);
+    bool getNodeChildren(TTNode<T>* node);
+    bool findNode(TTNode<T>*, T value);
 };
 
 
@@ -439,16 +442,65 @@ void TTTree<T>::print23(TTNode<T> * node, int lv)
 }
 
 template <class T>
+bool TTTree<T>::findNode(TTNode<T>* node, T value)
+{
+    if(node == nullptr)
+        return false;
+    if(isLeaf(node))
+    {
+        if(is2Node(node))
+        {
+            if(node->getLower() == value)
+            {
+                return true;
+            }
+        }
+        else if(is3Node(node))
+        {
+            if(node->getLower() == value || node->getHigher() == value)
+                return true;
+        }
+        return false;
+    }
+    else if(is2Node(node))
+    {
+        if(value == node->getLower())
+        {
+            return true;
+        }
+        
+        if(value < node->getLower())
+            return findNode(node->getLeft(), value);
+        else
+            return findNode( node->getRight(), value);
+    }
+    else if(is3Node(node))
+    {
+        if(node->getLower() == value || node->getHigher() == value)
+            return true;
+        if(value < node->getLower())
+            return findNode(node->getLeft(), value);
+        else if(value > node->getHigher())
+            return findNode(node->getRight(), value);
+        else
+            return findNode(node->getMiddle(), value);
+    }
+    return false;
+}
+
+template <class T>
 bool TTTree<T>::isTT(TTNode<T>* node)
 {
     getLeafLevels(root);
     T cmp = leafLevels[0];
+    bool leafs,nodeKeys,nodeChildren;
+    leafs = nodeKeys = nodeChildren = true;
     for(int i=1; i<leafLevels.size(); i++)
     {
         if(leafLevels[i] != cmp)
-         return false;
+            leafs = false;
     }
-    return true;
+    return leafs;
 }
 
 template <class T>

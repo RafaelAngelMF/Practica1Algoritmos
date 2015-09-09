@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4082DB55-7F6D-4F8E-B9DE-78072887D292</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Practica_1_Algoritmos</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9038B885882E3AA08B127B81A57CCE80BA43EDA8</key>
+		<string>https://github.com/alexis-matuk/Practica1Algoritmos.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Practica_1_Algoritmos.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9038B885882E3AA08B127B81A57CCE80BA43EDA8</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/alexis-matuk/Practica1Algoritmos.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9038B885882E3AA08B127B81A57CCE80BA43EDA8</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9038B885882E3AA08B127B81A57CCE80BA43EDA8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Practica_1_Algoritmos</string>
+		</dict>
+	</array>
+</dict>
+</plist>
