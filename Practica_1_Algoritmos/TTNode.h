@@ -156,6 +156,14 @@ public:
         }
     }
     
+    void deleteAllKeys()
+    {
+        if(smaller)
+            smaller = nullptr;
+        if(higher)
+            higher = nullptr;
+    }
+    
     void setMiddleValue(T _value)
     {
         if(higher && smaller)
@@ -198,16 +206,29 @@ public:
         }
     }
     
-    void swapHigherToLower()
-    {
-        *smaller = *higher;
-        higher = nullptr;
-    }
-    
     void deleteHigher()
     {
+        if(higher)
+        {
+            higher = nullptr;
+        }
+    }
+    
+    void deleteLower()
+    {
+        if(smaller)
+            smaller = nullptr;
+    }
+    
+    void swapHigherToLower()
+    {
+        if(!smaller)
+            smaller = new T(*higher);
+        else
+            *smaller = *higher;
         higher = nullptr;
     }
+
     
     bool hasLower(){
         if(smaller==nullptr)
@@ -220,6 +241,11 @@ public:
             return false;
         else
             return true;
+    }
+    
+    bool hasNoKeys()
+    {
+        return !smaller && !higher;
     }
     
     TTNode<T> * getLeft() const { return leftChild; }

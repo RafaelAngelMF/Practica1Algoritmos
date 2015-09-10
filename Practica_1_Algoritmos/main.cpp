@@ -94,21 +94,130 @@ int main(int argc, const char * argv[])
 //    bst->prettyPrint();
     TTTree<int>* jesusTakeTheWheel = new TTTree<int>();
     
+    /*
+    jesusTakeTheWheel->insert23(10);
+    jesusTakeTheWheel->insert23(20);
+    jesusTakeTheWheel->insert23(5);
+
+    jesusTakeTheWheel->deleteNode(10);
+     ====EXITO====
+     */
+    
+    /*
+    jesusTakeTheWheel->insert23(10);
+     jesusTakeTheWheel->insert23(20);
+     jesusTakeTheWheel->insert23(5);
+    jesusTakeTheWheel->insert23(4);
+    jesusTakeTheWheel->insert23(3);
+    jesusTakeTheWheel->insert23(2);
+    jesusTakeTheWheel->insert23(1);
+    jesusTakeTheWheel->insert23(2);
+    jesusTakeTheWheel->insert23(2);
+    jesusTakeTheWheel->insert23(2);
+    
+    jesusTakeTheWheel->deleteNode(10);
+      ====EXITO====
+     */
+    
+    /*
+    jesusTakeTheWheel->insert23(10);
+    jesusTakeTheWheel->insert23(20);
+    jesusTakeTheWheel->insert23(5);
+    jesusTakeTheWheel->insert23(4);
+    jesusTakeTheWheel->insert23(3);
+    jesusTakeTheWheel->insert23(2);
+    jesusTakeTheWheel->insert23(1);
+    jesusTakeTheWheel->insert23(30);
+    jesusTakeTheWheel->insert23(35);
+    
+    jesusTakeTheWheel->deleteNode(2);
+     ====EXITO====
+     */
+    
+    
+//    jesusTakeTheWheel->insert23(100);
+//    jesusTakeTheWheel->insert23(30);
+//    jesusTakeTheWheel->insert23(140);
+//    jesusTakeTheWheel->insert23(25);
+//    jesusTakeTheWheel->insert23(20);
+//    jesusTakeTheWheel->insert23(150);
+//    jesusTakeTheWheel->insert23(130);
+//    jesusTakeTheWheel->insert23(10);
+//    jesusTakeTheWheel->insert23(21);
+//    jesusTakeTheWheel->insert23(22);
+//    jesusTakeTheWheel->insert23(23);
+    
+    //jesusTakeTheWheel->deleteNode(20); ====EXITO====
+    
+    //jesusTakeTheWheel->deleteNode(25); ====EXITO====
+    
+    //jesusTakeTheWheel->deleteNode(140); ====EXITO====
+     
     jesusTakeTheWheel->insert23(10);
     jesusTakeTheWheel->insert23(20);
     jesusTakeTheWheel->insert23(5);
     jesusTakeTheWheel->insert23(30);
-    jesusTakeTheWheel->insert23(50);
-    jesusTakeTheWheel->insert23(1);
-    jesusTakeTheWheel->insert23(23);
-    jesusTakeTheWheel->insert23(19);
-    jesusTakeTheWheel->insert23(2);
-    jesusTakeTheWheel->insert23(2);
-    jesusTakeTheWheel->insert23(2);
-    jesusTakeTheWheel->insert23(70);
     jesusTakeTheWheel->insert23(40);
+    jesusTakeTheWheel->insert23(60);
+    jesusTakeTheWheel->insert23(70);
+    
+    jesusTakeTheWheel->insert23(50);
+    jesusTakeTheWheel->insert23(55);
+    jesusTakeTheWheel->insert23(56);
+    jesusTakeTheWheel->insert23(45);
+    jesusTakeTheWheel->insert23(57);
+    
+    jesusTakeTheWheel->insert23(54);
+    jesusTakeTheWheel->insert23(43);
+    jesusTakeTheWheel->insert23(70);
     jesusTakeTheWheel->insert23(80);
     jesusTakeTheWheel->insert23(90);
+    jesusTakeTheWheel->insert23(100);
+    jesusTakeTheWheel->insert23(1);
+    jesusTakeTheWheel->insert23(2);
+    jesusTakeTheWheel->insert23(3);
+    jesusTakeTheWheel->insert23(4);
+    jesusTakeTheWheel->insert23(56);
+    jesusTakeTheWheel->insert23(46);
+    jesusTakeTheWheel->insert23(47);
+    jesusTakeTheWheel->insert23(48);
+    jesusTakeTheWheel->insert23(49);
+    
+    if(jesusTakeTheWheel->isTT())
+        std::cout << "Si es 2-3" << std::endl;
+    else
+        std::cout << "No es 2-3" << std::endl;
+    
+    jesusTakeTheWheel->deleteNode(70);
+    
+    if(jesusTakeTheWheel->isTT())
+        std::cout << "Si es 2-3" << std::endl;
+    else
+        std::cout << "No es 2-3" << std::endl;
+    
+//    jesusTakeTheWheel->insert23(6);
+//    jesusTakeTheWheel->insert23(7);
+    //jesusTakeTheWheel->insert23(52);
+    //jesusTakeTheWheel->insert23(53);
+    //52 y 53
+    
+    //jesusTakeTheWheel->insert23(65);
+    //jesusTakeTheWheel->insert23(68);
+    
+    
+    
+//    jesusTakeTheWheel->insert23(30);
+//    jesusTakeTheWheel->insert23(50);
+//    jesusTakeTheWheel->insert23(1);
+//    jesusTakeTheWheel->insert23(23);
+//    jesusTakeTheWheel->insert23(19);
+//    jesusTakeTheWheel->insert23(2);
+//    jesusTakeTheWheel->insert23(2);
+//    jesusTakeTheWheel->insert23(2);
+//    jesusTakeTheWheel->insert23(70);
+//    jesusTakeTheWheel->insert23(40);
+//    jesusTakeTheWheel->insert23(80);
+//    jesusTakeTheWheel->insert23(90);
     
    // ========PRUEBA CON 100,000 NUMEROS======
 //    srand((int) time(NULL));
@@ -118,20 +227,22 @@ int main(int argc, const char * argv[])
 //        jesusTakeTheWheel->insert23(rand()%1000);
 //    }
 
-    if(jesusTakeTheWheel->isTT(jesusTakeTheWheel->getRoot()))
-        std::cout << "si es 2-3 y su nivel es " << jesusTakeTheWheel->getHeight(jesusTakeTheWheel->getRoot())+1 <<std::endl;
-    else
-    {
-        std::cout << "no es 2-3" << std::endl;
-    }
+//    if(jesusTakeTheWheel->isTT(jesusTakeTheWheel->getRoot()))
+//        std::cout << "si es 2-3 y su nivel es " << jesusTakeTheWheel->getHeight(jesusTakeTheWheel->getRoot())+1 <<std::endl;
+//    else
+//    {
+//        std::cout << "no es 2-3" << std::endl;
+//    }
     
-    int n =10;
-    if(jesusTakeTheWheel->findNode(jesusTakeTheWheel->getRoot(), n))
-    {
-        std::cout << "Si se encontro " << n << std::endl;
-    }
-    else
-        std::cout << "No se encontro " << n << std::endl;
+//    jesusTakeTheWheel->deleteNode(10);
+//    
+//    int n =10;
+//    if(jesusTakeTheWheel->findNode(jesusTakeTheWheel->getRoot(), n))
+//    {
+//        std::cout << "Si se encontro " << n << std::endl;
+//    }
+//    else
+//        std::cout << "No se encontro " << n << std::endl;
 
     return 0;
 }
