@@ -11,10 +11,8 @@
 #include "TTNode.h"
 #include <iomanip>
 #include <queue>
-#include <iostream>     // std::cout
-#include <algorithm>    // std::sort
-#include <vector>       // std::vector
-
+#include <iostream>
+#include <vector>
 template <class T>
 class TTTree {
     
@@ -178,7 +176,6 @@ bool TTTree<T>::isRoot(TTNode<T> * node){
 template <class T>
 void TTTree<T>::insert23(T item)
 {
-    //TTNode<T> * node = new TTNode<T>(item);
     insert23(this->root, item);
 }
 
@@ -450,8 +447,7 @@ void TTTree<T>::print23(TTNode<T> * node, int lv)
     
 }
 
-//Completa el delete cuando el nodo esta vacio por borrar la raiz, redistribuir valores o mergear nodos.
-//Si n es interno tiene un hijo
+
 template <class T>
 void TTTree<T>::fixTree(TTNode<T>* node)
 {
@@ -463,19 +459,16 @@ void TTTree<T>::fixTree(TTNode<T>* node)
     else
     {
         bool threeKeys = false;
-        TTNode<T>* parent = node->getParent();//let p be the parent of n
-        //=====IF SOME SIBLING OF N HAS 2 ITEMS====
+        TTNode<T>* parent = node->getParent();
         if(is2Node(parent))
         {
             TTNode<T>* sibling = new TTNode<T>();
-            if(parent->getRight() == node)//soy derecho
+            if(parent->getRight() == node)
                 sibling = parent->getLeft();
-            else//soy izquierdo
+            else
                 sibling = parent->getRight();
             if(parent->getRight() == node)
             {
-                //soy hijo derecho
-                //======YA ENTRO A ESTE CASO======
                 if(is3Node(parent->getLeft()))
                 {
                     threeKeys = true;
@@ -487,19 +480,15 @@ void TTTree<T>::fixTree(TTNode<T>* node)
                     T low = keys[0];
                     T mid = keys[1];
                     T high = keys[2];
-                    
-                    //if some sibling of n has 2 items
-                    //Distribute items among n, the sibling and p
                     node->setValue(high);
                     parent->deleteAllKeys();
                     parent->setValue(mid);
                     sibling->deleteAllKeys();
                     sibling->setValue(low);
                     
-                    //======YA ENTRO A ESTE CASO======
+
                     if(!isLeaf(node))
                     {
-                        //MOVE THE APPROPRIATE CHILD FROM SIBLING TO N
                         node->setRight(node->getMiddle());
                         node->setMiddle(nullptr);
                         node->setLeft(sibling->getRight());
@@ -511,8 +500,6 @@ void TTTree<T>::fixTree(TTNode<T>* node)
             }
             else
             {
-                //soy hijo izquierdo
-                //======YA ENTRO A ESTE CASO======
                 if(is3Node(parent->getRight()))
                 {
                     threeKeys = true;
@@ -524,124 +511,98 @@ void TTTree<T>::fixTree(TTNode<T>* node)
                     T low = keys[0];
                     T mid = keys[1];
                     T high = keys[2];
-                    //if some sibling of n has 2 items
-                    //Distribute items among n, the sibling and p
                     node->setValue(low);
                     parent->deleteAllKeys();
                     parent->setValue(mid);
                     sibling->deleteAllKeys();
                     sibling->setValue(high);
                     
-                    //======YA ENTRO A ESTE CASO======
                     if(!isLeaf(node))
                     {
-                        //MOVE THE APPROPRIATE CHILD FROM SIBLING TO N
                         node->setLeft(node->getMiddle());
                         node->setMiddle(nullptr);
                         node->setRight(sibling->getLeft());
                         node->getRight()->setParent(node);
                         sibling->setLeft(sibling->getMiddle());
-                        sibling->setMiddle(nullptr);//TENEMOS QUE HACER QUE LA REFERNCIA SIEMPRE SE QUEDE EN MEDIO
+                        sibling->setMiddle(nullptr);
                     }
                 }
             }
         }
-        else if(is3Node(parent))//======NO HA ENTRADO A NINGUN SUBCASO======
+        else if(is3Node(parent))
         {
             TTNode<T>* sibling = new TTNode<T>();
             if(parent->getRight() == node)
             {
-                //======ME ESTOY PASANDO DE AMIGO, NO ME LA CREO======
                 if(is3Node(parent->getMiddle()))
                 {
                     threeKeys = true;
-                    //mi sibling es el del medio
                     sibling = parent->getMiddle();
                     node->setValue(parent->getHigher());
                     parent->setHigher(sibling->getHigher());
                     sibling->deleteHigher();
                     if(!isLeaf(node))
                     {
-                        //======YA ENTRO A ESTE CASO======
-                        //MOVE THE APPROPRIATE CHILD FROM SIBLING TO N
                         node->setRight(node->getMiddle());
                         node->setLeft(sibling->getRight());
                         node->getLeft()->setParent(node);
                         sibling->setRight(sibling->getMiddle());
                         sibling->setMiddle(nullptr);
                     }
-                    //if some sibling of n has 2 items
-                    //Distribute items among n, the sibling and p
                 }
             }
             else if(parent->getMiddle() == node)
             {
-                //======YA ENTRO A ESTE CASO======
                 if(is3Node(parent->getLeft()))
                 {
                     threeKeys = true;
-                    //mi sibling es el izquierdo
                     sibling = parent->getLeft();
                     node->setValue(parent->getLower());
                     parent->setLower(sibling->getHigher());
                     sibling->deleteHigher();
                     if(!isLeaf(node))
                     {
-                        //======YA ENTRO A ESTE CASO======
-                        //MOVE THE APPROPRIATE CHILD FROM SIBLING TO N
                         node->setRight(node->getMiddle());
                         node->setLeft(sibling->getRight());
                         node->getLeft()->setParent(node);
                         sibling->setRight(sibling->getMiddle());
                         sibling->setMiddle(nullptr);
                     }
-                    //if some sibling of n has 2 items
-                    //Distribute items among n, the sibling and p
                 }
             }
             else
             {
-                //======YA ENTRO A ESTE CASO======
                 if(is3Node(parent->getMiddle()))
                 {
                     threeKeys = true;
-                        //======YA ENTRO A ESTE CASO======
-                        //mi sibling es el medio
-                        sibling = parent->getMiddle();
-                        node->setValue(parent->getLower());
-                        parent->setLower(sibling->getLower());
-                        sibling->swapHigherToLower();
-                        if(!isLeaf(node))
-                        {
-                            //MOVE THE APPROPRIATE CHILD FROM SIBLING TO N
-                            node->setLeft(node->getMiddle());
-                            node->setRight(sibling->getLeft());
-                            node->getRight()->setParent(node);
-                            sibling->setLeft(sibling->getMiddle());
-                            sibling->setMiddle(nullptr);
-                        }
-                    //if some sibling of n has 2 items
-                    //Distribute items among n, the sibling and p
+                    sibling = parent->getMiddle();
+                    node->setValue(parent->getLower());
+                    parent->setLower(sibling->getLower());
+                    sibling->swapHigherToLower();
+                    if(!isLeaf(node))
+                    {
+                        node->setLeft(node->getMiddle());
+                        node->setRight(sibling->getLeft());
+                        node->getRight()->setParent(node);
+                        sibling->setLeft(sibling->getMiddle());
+                        sibling->setMiddle(nullptr);
+                    }
                 }
             }
         }
-        if(!threeKeys)//IF THERE ARE NO SIBLINGS WITH 3 ITEMS, MERGE THE NODE
+        if(!threeKeys)
         {
             TTNode<T>* sibling = new TTNode<T>();
-            //CHOOSE ADJACENT SIBLING
             if(is2Node(parent))
             {
-                if(parent->getRight() == node)//soy derecho
+                if(parent->getRight() == node)
                 {
-                    //======YA ENTRO A ESTE CASO======
                     sibling = parent->getLeft();
-                    sibling->setValue(parent->getLower());//bring item down
+                    sibling->setValue(parent->getLower());
                     if(!isLeaf(node))
                     {
-                        //======YA ENTRO A ESTE CASO======
-                        //move n's child to s
                         sibling->setMiddle(sibling->getRight());
-                        sibling->setRight(node->getMiddle());//TENEMOS QUE HACER QUE LA REFERNCIA SIEMPRE SE QUEDE EN MEDIO
+                        sibling->setRight(node->getMiddle());
                     }
                     parent->setMiddle(sibling);
                     parent->getMiddle()->setParent(parent);
@@ -650,17 +611,14 @@ void TTTree<T>::fixTree(TTNode<T>* node)
                     parent->deleteAllKeys();
                     delete node;
                 }
-                else//soy izquierdo
+                else
                 {
-                    //======YA ENTRO A ESTE CASO======
                     sibling = parent->getRight();
                     sibling->setValue(parent->getLower());
                     if(!isLeaf(node))
                     {
-                        //======YA ENTRO A ESTE CASO======
-                        //move n's child to s
                         sibling->setMiddle(sibling->getLeft());
-                        sibling->setLeft(node->getMiddle());//TENEMOS QUE HACER QUE LA REFERNCIA SIEMPRE SE QUEDE EN MEDIO
+                        sibling->setLeft(node->getMiddle());
                         sibling->getLeft()->setParent(sibling);
                     }
                     parent->setMiddle(sibling);
@@ -671,20 +629,16 @@ void TTTree<T>::fixTree(TTNode<T>* node)
                     delete node;
                 }
             }
-            else if(is3Node(parent))//======YA ENTRO A TODOS LOS SUBCASOS  ======
+            else if(is3Node(parent))
             {
-                //choose adjacent sibling of n
-                //======YA ENTRO A ESTE CASO======
-                if(parent->getRight() == node)//soy derecho
+                if(parent->getRight() == node)
                 {
-                    sibling = parent->getMiddle();//agarro en medio
+                    sibling = parent->getMiddle();
                     sibling->setValue(parent->getHigher());
                     if(!isLeaf(node))
                     {
-                        //======YA ENTRO A ESTE CASO======
-                        //move n's child to s
                         sibling->setMiddle(sibling->getRight());
-                        sibling->setRight(node->getMiddle());//TENEMOS QUE HACER QUE LA REFERNCIA SIEMPRE SE QUEDE EN MEDIO
+                        sibling->setRight(node->getMiddle());
                         sibling->getRight()->setParent(sibling);
                     }
                     parent->setRight(sibling);
@@ -693,17 +647,14 @@ void TTTree<T>::fixTree(TTNode<T>* node)
                     parent->deleteHigher();
                     delete node;
                 }
-                //======YA ENTRO A ESTE CASO======
-                else if(parent->getMiddle() == node)//soy medio
+                else if(parent->getMiddle() == node)
                 {
-                    sibling = parent->getLeft();//agarro a la izquierda
+                    sibling = parent->getLeft();
                     sibling->setValue(parent->getLower());
                     if(!isLeaf(node))
                     {
-                        //======YA ENTRO A ESTE CASO======
-                        //move n's child to s
                         sibling->setMiddle(sibling->getRight());
-                        sibling->setRight(node->getMiddle());//TENEMOS QUE HACER QUE LA REFERNCIA SIEMPRE SE QUEDE EN MEDIO
+                        sibling->setRight(node->getMiddle());
                         sibling->getRight()->setParent(sibling);
                     }
                     parent->setLeft(sibling);
@@ -713,17 +664,14 @@ void TTTree<T>::fixTree(TTNode<T>* node)
                     parent->swapHigherToLower();
                     delete node;
                 }
-                else//soy izquierdo
+                else
                 {
-                    //======YA ENTRO A ESTE CASO======
-                    sibling = parent->getMiddle();//agarro en medio
+                    sibling = parent->getMiddle();
                     sibling->setValue(parent->getLower());
                     if(!isLeaf(node))
                     {
-                        //======YA ENTRO A ESTE CASO======
-                        //move n's child to s
                         sibling->setMiddle(sibling->getLeft());
-                        sibling->setLeft(node->getMiddle());//TENEMOS QUE HACER QUE LA REFERNCIA SIEMPRE SE QUEDE EN MEDIO
+                        sibling->setLeft(node->getMiddle());
                         sibling->getLeft()->setParent(sibling);
                     }
                     parent->setLeft(sibling);
@@ -734,7 +682,6 @@ void TTTree<T>::fixTree(TTNode<T>* node)
                     delete node;
                 }
             }
-            //REMOVE NODE N
             if(parent->hasNoKeys())
             {
                 sibling->setParent(parent);
@@ -754,12 +701,10 @@ bool TTTree<T>::deleteNode(T value)
         TTNode<T>* leafNode = new TTNode<T>();
         if(!isLeaf(node))
         {
-            //Swap node with the inorder succesor, which will be in a leaf :)
             leafNode = getInorderSuccesor(node);
             T swapVal = leafNode->getLower();
             node->setLower(swapVal);
         }
-        //El delete siempre empieza con una hoja?
         leafNode->deleteLower();
         if(leafNode->hasNoKeys())
         {
@@ -1177,24 +1122,24 @@ bool TTTree<T>::isAvl(TTNode<T> * node) const
 template <class T>
 void TTTree<T>::sort(T a[], int N)
 {
-        int i, j, flag = 1;    // set flag to 1 to start first pass
-        int temp;             // holding variable
+        int i, j, flag = 1;
+        int temp;
         int numLength = N;
         for(i = 1; (i <= numLength) && flag; i++)
         {
             flag = 0;
             for (j=0; j < (numLength -1); j++)
             {
-                if (a[j+1] < a[j])      // ascending order simply changes to <
+                if (a[j+1] < a[j])
                 {
-                    temp = a[j];             // swap elements
+                    temp = a[j];
                     a[j] = a[j+1];
                     a[j+1] = temp;
-                    flag = 1;               // indicates that a swap occurred.
+                    flag = 1;
                 }
             }
         }
-        return;   //arrays are passed to functions by address; nothing is returned
+        return;
 }
 
 
