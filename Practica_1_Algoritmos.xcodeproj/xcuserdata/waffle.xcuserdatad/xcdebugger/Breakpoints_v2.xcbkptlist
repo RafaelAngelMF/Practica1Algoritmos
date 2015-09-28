@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/main.cpp"
-            timestampString = "463570432.799798"
+            timestampString = "465152341.264062"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "246"
-            endingLineNumber = "246"
+            startingLineNumber = "299"
+            endingLineNumber = "299"
             landmarkName = "main(int argc, const char * argv[])"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/main.cpp"
-            timestampString = "463570432.799798"
+            timestampString = "465152341.264062"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "247"
-            endingLineNumber = "247"
+            startingLineNumber = "300"
+            endingLineNumber = "300"
             landmarkName = "main(int argc, const char * argv[])"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/main.cpp"
-            timestampString = "463570432.799798"
+            timestampString = "465152341.264062"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "248"
-            endingLineNumber = "248"
+            startingLineNumber = "301"
+            endingLineNumber = "301"
             landmarkName = "main(int argc, const char * argv[])"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,7 +94,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "209"
-            endingLineNumber = "209">
+            endingLineNumber = "209"
+            landmarkName = "split(TTNode&lt;T&gt;* container)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -108,9 +110,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "846"
-            endingLineNumber = "846"
-            landmarkName = "findNode(TTNode&lt;T&gt;* node, T value)"
-            landmarkType = "7">
+            endingLineNumber = "846">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -125,7 +125,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "749"
             endingLineNumber = "749"
-            landmarkName = "deleteNode(T value)"
+            landmarkName = "findNodeToDelete(TTNode&lt;T&gt;* node, T value)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -141,7 +141,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "771"
             endingLineNumber = "771"
-            landmarkName = "deleteNode(T value)"
+            landmarkName = "findNodeToDelete(TTNode&lt;T&gt;* node, T value)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -157,7 +157,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "752"
             endingLineNumber = "752"
-            landmarkName = "deleteNode(T value)"
+            landmarkName = "findNodeToDelete(TTNode&lt;T&gt;* node, T value)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -173,7 +173,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "750"
             endingLineNumber = "750"
-            landmarkName = "deleteNode(T value)"
+            landmarkName = "findNodeToDelete(TTNode&lt;T&gt;* node, T value)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -268,9 +268,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "738"
-            endingLineNumber = "738"
-            landmarkName = "fixTree(TTNode&lt;T&gt;* node)"
-            landmarkType = "7">
+            endingLineNumber = "738">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -301,7 +299,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "729"
             endingLineNumber = "729"
-            landmarkName = "fixTree(TTNode&lt;T&gt;* node)"
+            landmarkName = "getInorderSuccesor(TTNode&lt;T&gt;* node)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -317,7 +315,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "741"
             endingLineNumber = "741"
-            landmarkName = "fixTree(TTNode&lt;T&gt;* node)"
+            landmarkName = "findNodeToDelete(TTNode&lt;T&gt;* node, T value)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -333,7 +331,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "700"
             endingLineNumber = "700"
-            landmarkName = "fixTree(TTNode&lt;T&gt;* node)"
+            landmarkName = "deleteNode(T value)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -472,11 +470,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/main.cpp"
-            timestampString = "463570460.122407"
+            timestampString = "465152341.264062"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
+            startingLineNumber = "246"
+            endingLineNumber = "246"
             landmarkName = "main(int argc, const char * argv[])"
             landmarkType = "7">
          </BreakpointContent>
@@ -493,7 +491,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "913"
             endingLineNumber = "913"
-            landmarkName = "isTT(TTNode&lt;T&gt;* node)"
+            landmarkName = "insert(TTNode&lt;T&gt; * parent, TTNode&lt;T&gt; * value)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -536,11 +534,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/main.cpp"
-            timestampString = "463572393.695882"
+            timestampString = "465152341.264062"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
             landmarkName = "main(int argc, const char * argv[])"
             landmarkType = "7">
          </BreakpointContent>
@@ -557,7 +555,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "920"
             endingLineNumber = "920"
-            landmarkName = "getLeafLevels(TTNode&lt;T&gt;* node)"
+            landmarkName = "preOrder()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -568,11 +566,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/main.cpp"
-            timestampString = "463572709.65012"
+            timestampString = "465152341.264062"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
+            startingLineNumber = "247"
+            endingLineNumber = "247"
             landmarkName = "main(int argc, const char * argv[])"
             landmarkType = "7">
          </BreakpointContent>
@@ -584,11 +582,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/main.cpp"
-            timestampString = "463572885.023014"
+            timestampString = "465152341.264062"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
             landmarkName = "main(int argc, const char * argv[])"
             landmarkType = "7">
          </BreakpointContent>
@@ -600,11 +598,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/main.cpp"
-            timestampString = "463572967.333015"
+            timestampString = "465152341.264062"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
             landmarkName = "main(int argc, const char * argv[])"
             landmarkType = "7">
          </BreakpointContent>
@@ -638,6 +636,22 @@
             startingLineNumber = "662"
             endingLineNumber = "662"
             landmarkName = "fixTree(TTNode&lt;T&gt;* node)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Practica_1_Algoritmos/main.cpp"
+            timestampString = "465102420.923139"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "main(int argc, const char * argv[])"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

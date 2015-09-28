@@ -9,9 +9,12 @@
 #include "TTTree.h"
 #include "RedBlackTree.h"
 #include "BinarySearchTree.h"
+#include "ArbolB.h"
 
 int main(int argc, const char * argv[])
 {
+/*
+    ===== Two Three Tree Tests =====
     TTTree<int>* jesusTakeTheWheel = new TTTree<int>();
      
     jesusTakeTheWheel->insert23(10);
@@ -56,5 +59,56 @@ int main(int argc, const char * argv[])
     else
         std::cout << "No es 2-3" << std::endl;
 
+    return 0;
+*/
+
+
+    int orden = 2;
+    
+    ArbolB<int> * arbol = new ArbolB<int>(orden);
+    
+    //cout << arbol->cantidadNodos();
+    arbol->Insertar(5);
+    cout << endl;
+    
+    
+    arbol->Insertar(9);
+    cout << endl;
+    
+    arbol->Insertar(3);
+    cout << endl;
+    arbol->Insertar(7);
+    cout << endl;
+    arbol->Insertar(1);
+    cout << endl;
+    arbol->Insertar(2);
+    cout << endl;
+    arbol->Insertar(8);
+    cout << endl;
+    arbol->Insertar(6);
+    cout << endl;
+    arbol->Insertar(0);
+    cout << endl;
+    arbol->Insertar(4);
+    cout << endl;
+    
+    
+    
+    //
+    //    NodoArbolB<int> * nodo = new NodoArbolB<int>(orden);
+    //    nodo->insertarDato(10);
+    //    nodo->insertarDato(20);
+    //    nodo->insertarDato(30);
+    //    nodo->insertarDato(40);
+    //    nodo->setLlave(0);
+    //    nodo->save(orden,true);
+    //    arbol->cantidadNodos();
+    //    NodoArbolB<int> * nuevo = new NodoArbolB<int>(orden);
+    //    nuevo->carga(0,orden);
+    //    nuevo->print();
+    //    cout << nodo->getUsed();
+    //nodo->save();
+    
+    //BNode<int> * m_two = new BNode<int>(2);
     return 0;
 }

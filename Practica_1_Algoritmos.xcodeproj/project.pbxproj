@@ -23,6 +23,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		380297001BB8AECC00A16CEC /* ArbolB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArbolB.h; sourceTree = "<group>"; };
+		380297011BB8AECD00A16CEC /* data.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = data.dat; sourceTree = "<group>"; };
+		380297021BB8AECD00A16CEC /* NodoArbolB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodoArbolB.h; sourceTree = "<group>"; };
 		381D2C9F1B9B53CB0093A9A6 /* Practica_1_Algoritmos */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Practica_1_Algoritmos; sourceTree = BUILT_PRODUCTS_DIR; };
 		381D2CA21B9B53CB0093A9A6 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		381D2CA91B9B53E50093A9A6 /* BNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BNode.h; sourceTree = "<group>"; };
@@ -64,6 +67,9 @@
 		381D2CA11B9B53CB0093A9A6 /* Practica_1_Algoritmos */ = {
 			isa = PBXGroup;
 			children = (
+				380297001BB8AECC00A16CEC /* ArbolB.h */,
+				380297011BB8AECD00A16CEC /* data.dat */,
+				380297021BB8AECD00A16CEC /* NodoArbolB.h */,
 				381D2CA21B9B53CB0093A9A6 /* main.cpp */,
 				381D2CA91B9B53E50093A9A6 /* BNode.h */,
 				381D2CAE1B9B83B00093A9A6 /* BinaryTree.h */,
