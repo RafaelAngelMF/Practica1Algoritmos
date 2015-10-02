@@ -44,7 +44,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "YES"
-      customWorkingDirectory = "/Users/waffle/Downloads/b-tree-master"
+      customWorkingDirectory = "/Users/waffle/Desktop/Tec/Quinto Semestre/Analisis y Disen&#x303;o de Algoritmos/Practica_1_Algoritmos/Practica_1_Algoritmos"
       buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"

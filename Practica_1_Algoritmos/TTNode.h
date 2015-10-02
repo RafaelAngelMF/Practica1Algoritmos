@@ -112,9 +112,9 @@ public:
     
     bool isFull()
     {
-//        if(higher != nullptr && smaller != nullptr)
-//            return true;
-//        return false;
+        //        if(higher != nullptr && smaller != nullptr)
+        //            return true;
+        //        return false;
         if(higher && smaller)
             return true;
         return false;
@@ -228,7 +228,7 @@ public:
             *smaller = *higher;
         higher = nullptr;
     }
-
+    
     
     bool hasLower(){
         if(smaller==nullptr)

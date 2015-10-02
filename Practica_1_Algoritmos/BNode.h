@@ -1,28 +1,29 @@
 //
 //  BNode.h
-//  Practica_1_Algoritmos
+//  BinaryTree
 //
-//  Created by alexis matuk on 9/5/15.
-//  Copyright (c) 2015 alexis matuk. All rights reserved.
+//  Created by Vicente Cubells Nonell on 26/03/15.
+//  Copyright (c) 2015 Vicente Cubells Nonell. All rights reserved.
 //
 
-#ifndef Practica_1_Algoritmos_BNode_h
-#define Practica_1_Algoritmos_BNode_h
+#ifndef BinaryTree_BNode_h
+#define BinaryTree_BNode_h
 
 #include <iostream>
 
-
 template <class T>
-class BNode {
+class BNode 
+{
 protected:
     BNode<T> * parent = nullptr;
     BNode<T> * left = nullptr;
     BNode<T> * right = nullptr;
     
+    std::string color;
     T info;
     
 public:
-    
+
     BNode() { }
     BNode(const T & _info) : info (_info) { }
     BNode(const BNode<T> & );
@@ -32,18 +33,33 @@ public:
     T getInfo() const { return info; }
     void setInfo(const T & value) { info = value; }
     
-     BNode<T> * getLeft() const { return left; }
-     void setLeft(BNode<T> * value) { left = value; }
+    BNode<T> * getLeft() const { return left; }
+    void setLeft(BNode<T> * value) { left = value; }
     
-     BNode<T> * getRight() const { return right; }
-     void setRight(BNode<T> * value) { right = value; }
+    BNode<T> * getRight() const { return right; }
+    void setRight(BNode<T> * value) { right = value; }
     
-     BNode<T> * getParent() const { return parent; }
-     void setParent(BNode<T> * value) { parent = value; }
+    BNode<T> * getParent() const { return parent; }
+    void setParent(BNode<T> * value) { parent = value; }
     
-    template <typename Tn>
+    void setColor(std::string color);
+    std::string getColor();
+    
+	template <typename Tn>
     friend std::ostream & operator << (std::ostream & os, const BNode<Tn>  & node);
 };
+
+template <class T>
+void BNode<T>::setColor(std::string color)
+{
+    this->color = color;
+}
+
+template <class T>
+std::string BNode<T>::getColor()
+{
+    return color;
+}
 
 template <class T>
 BNode<T>::BNode(const BNode<T> & other)
@@ -69,7 +85,5 @@ std::ostream & operator << (std::ostream & os, const BNode<T>  & node)
     
     return os;
 }
-
-
 
 #endif

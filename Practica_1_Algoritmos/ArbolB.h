@@ -20,8 +20,7 @@ public:
     ~ArbolB();
     void Insertar(T dato);
     void Borrar(T dato);
-    
-    void print();
+
     
     void updateTotal(int cantidad);
     int getRoot();
@@ -33,7 +32,45 @@ public:
     NodoArbolB<T> carga(int llaveDeCarga);
     void cargaNodo(NodoArbolB<T> *,int);
     int cantidadNodos(); // Checa cantidad de nodos
+    void searchForNode(NodoArbolB<T> & node,T data, bool & found);
+    bool searchForNode(T dato);
+    void print(NodoArbolB<T> & node);
+    void print();
 };
+
+template <class T>
+bool ArbolB<T>::searchForNode(T dato)
+{
+    NodoArbolB<T> root = carga(getRoot());
+    bool found = false;
+    searchForNode(root, dato, found);
+    return found;
+}
+
+template <class T>
+void ArbolB<T>:: searchForNode(NodoArbolB<T> & nodo,T dato, bool & found)
+{
+    int i = 0;
+    while(i < nodo.espaciosUsados && dato > nodo.info[i])
+        i++;
+    if (i < nodo.espaciosUsados && dato == nodo.info[i])
+    {
+        found = true;
+        return;
+    }
+    else if (nodo.leaf)
+    {
+        return;
+    }
+    else
+    {
+        for(int j = i; j<=nodo.espaciosUsados;j++)
+        {
+            nodo = carga(nodo.hijos[j]);
+            searchForNode(nodo, dato, found);
+        }
+    }
+}
 
 template <class T>
 ArbolB<T>::ArbolB(int orden){
@@ -91,8 +128,10 @@ void ArbolB<T>::insertarDato(NodoArbolB<T> & nodo,T dato){
         NodoArbolB<T> nodoHijo = carga(nodo.hijos[i]);
         if(nodoHijo.checkFull(orden)){
             divideNodo(nodo, i, nodoHijo);
-            if(dato > nodo.info[i])
+            if(dato > nodo.info[i]){
                 i++;
+                nodoHijo = carga(nodo.hijos[i]);
+            }
         }
         insertarDato(nodoHijo, dato);
     }
@@ -100,6 +139,7 @@ void ArbolB<T>::insertarDato(NodoArbolB<T> & nodo,T dato){
 
 template <class T>
 void ArbolB<T>::divideNodo(NodoArbolB<T> & nodoPadre,int i,NodoArbolB<T> & nodo){
+    nodo.padre = nodoPadre.llave;
     NodoArbolB<T> nodoHermano(orden);
     nodoHermano.llave = currentID;
     nodoHermano.padre = nodoPadre.llave;
@@ -131,35 +171,64 @@ void ArbolB<T>::divideNodo(NodoArbolB<T> & nodoPadre,int i,NodoArbolB<T> & nodo)
     nodoPadre.info[i] = nodo.info[orden-1];
     nodoPadre.espaciosUsados++;
     
-    
     save(nodo);
     save(nodoPadre);
     save(nodoHermano);
-    
-    
-    
 }
 
 
 template <class T>
-void ArbolB<T>::print(){
-    NodoArbolB<T> nodo(orden);
-    for(int i = 0; i < currentID; i++){
-        nodo = carga(i);
-        nodo.print();
-        cout << endl;
+void ArbolB<T>:: print(NodoArbolB<T> & nodo)
+{
+    NodoArbolB<T> hijo(orden);
+    int i = 0;
+    while(i < nodo.espaciosUsados)
+    {
+        std::cout << "| " << nodo.info[i] << " |";
+        i++;
     }
-    
+    std::cout << std::endl;
+    if(!nodo.leaf)
+    {
+        for(int j = 0; j<=nodo.espaciosUsados;j++)
+        {
+            hijo = carga(nodo.hijos[j]);
+            print(hijo);
+        }
+    }
+    else
+        return;
 }
 
+template <class T>
+void ArbolB<T>::print()
+{
+   NodoArbolB<T> root = carga(getRoot());
+    print(root);
+}
 
 template <class T>
 void ArbolB<T>::setData(){
-    //    int totalNodos = 0;
     int root = 0;
-    data.open("/Users/javiercuriel/Documents/XCODE/Algoritmos/Arbol-B/Arbol-B/data.dat", ios::out|ios::in| ios::binary);
+    try
+    {
+        if (ifstream("./data.dat")) {
+            std::cout << "Se encontró el archivo... Abriendo " << std::endl;
+            data.open("./data.dat", ios::out|ios::in| ios::binary);
+        } else {
+            std::cout << "No se encontró el archivo... Creando uno nuevo" << std::endl;
+            data.open("./data.dat", ios::out | ios::binary);
+            data.close();
+            data.open("./data.dat", ios::out|ios::in| ios::binary);
+        }
+        if(data.fail())
+            throw 1;
+    }
+    catch (int e)
+    {
+        std::cerr << "Hubo un error al abrir los datos... Exception " << e << " caught" << std::endl;
+    }
     data.seekp(0);
-    //    data.write(reinterpret_cast<char*>(&totalNodos), sizeof(int));
     data.write(reinterpret_cast<char*>(&root), sizeof(int));
 }
 

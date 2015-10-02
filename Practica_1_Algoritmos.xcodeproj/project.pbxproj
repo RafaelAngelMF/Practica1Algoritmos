@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		381D2CA31B9B53CB0093A9A6 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 381D2CA21B9B53CB0093A9A6 /* main.cpp */; };
+		38D20BE51BBDDCF700BEFFC1 /* AplicacionesArboles.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38D20BE41BBDDCF700BEFFC1 /* AplicacionesArboles.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,13 +29,16 @@
 		380297021BB8AECD00A16CEC /* NodoArbolB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodoArbolB.h; sourceTree = "<group>"; };
 		381D2C9F1B9B53CB0093A9A6 /* Practica_1_Algoritmos */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Practica_1_Algoritmos; sourceTree = BUILT_PRODUCTS_DIR; };
 		381D2CA21B9B53CB0093A9A6 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		381D2CA91B9B53E50093A9A6 /* BNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BNode.h; sourceTree = "<group>"; };
-		381D2CAE1B9B83B00093A9A6 /* BinaryTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinaryTree.h; sourceTree = "<group>"; };
 		381D2CAF1B9B83F40093A9A6 /* BinarySearchTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinarySearchTree.h; sourceTree = "<group>"; };
-		3822F14E1B9CA862006B7ABF /* RedBlackTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedBlackTree.h; sourceTree = "<group>"; };
-		3822F14F1B9CA86F006B7ABF /* RBNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RBNode.h; sourceTree = "<group>"; };
 		3822F1511B9CF8B8006B7ABF /* TTNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTNode.h; sourceTree = "<group>"; };
 		3822F1521B9D29B6006B7ABF /* TTTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTTree.h; sourceTree = "<group>"; };
+		38D20BDF1BBD773E00BEFFC1 /* BinaryTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BinaryTree.h; sourceTree = "<group>"; };
+		38D20BE01BBD773E00BEFFC1 /* AVLTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVLTree.h; sourceTree = "<group>"; };
+		38D20BE11BBD773E00BEFFC1 /* BinarySTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BinarySTree.h; sourceTree = "<group>"; };
+		38D20BE21BBD773E00BEFFC1 /* BNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNode.h; sourceTree = "<group>"; };
+		38D20BE31BBDCC2500BEFFC1 /* RedBlackTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedBlackTree.h; sourceTree = "<group>"; };
+		38D20BE41BBDDCF700BEFFC1 /* AplicacionesArboles.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AplicacionesArboles.cpp; sourceTree = "<group>"; };
+		38D20BE61BBDE0AD00BEFFC1 /* Showcases.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Showcases.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,17 +71,20 @@
 		381D2CA11B9B53CB0093A9A6 /* Practica_1_Algoritmos */ = {
 			isa = PBXGroup;
 			children = (
+				38D20BE31BBDCC2500BEFFC1 /* RedBlackTree.h */,
+				38D20BDF1BBD773E00BEFFC1 /* BinaryTree.h */,
+				38D20BE01BBD773E00BEFFC1 /* AVLTree.h */,
+				38D20BE11BBD773E00BEFFC1 /* BinarySTree.h */,
+				38D20BE21BBD773E00BEFFC1 /* BNode.h */,
 				380297001BB8AECC00A16CEC /* ArbolB.h */,
 				380297011BB8AECD00A16CEC /* data.dat */,
 				380297021BB8AECD00A16CEC /* NodoArbolB.h */,
 				381D2CA21B9B53CB0093A9A6 /* main.cpp */,
-				381D2CA91B9B53E50093A9A6 /* BNode.h */,
-				381D2CAE1B9B83B00093A9A6 /* BinaryTree.h */,
 				381D2CAF1B9B83F40093A9A6 /* BinarySearchTree.h */,
-				3822F14E1B9CA862006B7ABF /* RedBlackTree.h */,
-				3822F14F1B9CA86F006B7ABF /* RBNode.h */,
 				3822F1511B9CF8B8006B7ABF /* TTNode.h */,
 				3822F1521B9D29B6006B7ABF /* TTTree.h */,
+				38D20BE41BBDDCF700BEFFC1 /* AplicacionesArboles.cpp */,
+				38D20BE61BBDE0AD00BEFFC1 /* Showcases.h */,
 			);
 			path = Practica_1_Algoritmos;
 			sourceTree = "<group>";
@@ -139,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				381D2CA31B9B53CB0093A9A6 /* main.cpp in Sources */,
+				38D20BE51BBDDCF700BEFFC1 /* AplicacionesArboles.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
