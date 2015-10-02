@@ -439,8 +439,6 @@ void showcaseB(BTree<T>* bTree)
                 bTree->printDesc();
                 std::cout << "=======Verificación=======" << std::endl;
                 bTree->isBTree() ? std::cout << "Sí es árbol B!" << std::endl : std::cout << "No es árbol B" << std::endl;
-                //std::cout << bTree->getLevel() << std::endl;
-                
                 break;}
             case 2:{
                 int val;
@@ -483,7 +481,7 @@ void showcaseB(BTree<T>* bTree)
                 bTree->printDesc();
                 break;}
             case 7:{
-                //bTree->verificarArbol(bTree) ? std::cout << "Sí es árbol B!" << std::endl : std::cout << "No es árbol B" << std::endl;
+                bTree->isBTree() ? std::cout << "Sí es árbol B!" << std::endl : std::cout << "No es árbol B" << std::endl;
                 break;}
             case 8:{
                 std::cout << "Adios!" << std::endl;
