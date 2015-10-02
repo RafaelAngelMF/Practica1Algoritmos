@@ -1,10 +1,9 @@
 
 
-#ifndef ProblemaPractico1_RedBlackTree_h
-#define ProblemaPractico1_RedBlackTree_h
+#ifndef RedBlackTree_h
+#define RedBlackTree_h
 
 #include "BinarySTree.h"
-#include <assert.h>
 #include <iomanip>
 
 template<class T>
@@ -19,7 +18,7 @@ public:
     
     BNode<T> * maximum_node(BNode<T> * nodo);
     
-    void verifyProperties(RedBlackTree * arbol);
+    void verifyProperties();
     void verifyProperty1(BNode<T> * nodo);
     void verifyProperty2(BNode<T> * nodo);
     void verifyProperty3(BNode<T> * nodo);
@@ -28,15 +27,15 @@ public:
     
     std::string color(BNode<T> * nodo);
     
-    void rotateLeft(RedBlackTree * arbol, BNode<T> * nodo);
-    void rotateRight(RedBlackTree * arbol, BNode<T> * nodo);
+    void rotateLeft(BNode<T> * nodo);
+    void rotateRight(BNode<T> * nodo);
     
     void RBinsert(T valor);
-    void insertCase1(RedBlackTree * arbol, BNode<T> * nodo);
-    void insertCase2(RedBlackTree * arbol, BNode<T> * nodo);
-    void insertCase3(RedBlackTree * arbol, BNode<T> * nodo);
-    void insertCase4(RedBlackTree * arbol, BNode<T> * nodo);
-    void insertCase5(RedBlackTree * arbol, BNode<T> * nodo);
+    void insertCase1(BNode<T> * nodo);
+    void insertCase2(BNode<T> * nodo);
+    void insertCase3(BNode<T> * nodo);
+    void insertCase4(BNode<T> * nodo);
+    void insertCase5(BNode<T> * nodo);
     
     void RBdelete(T valor);
     void deleteCase1(RedBlackTree * arbol, BNode<T> * nodo);
@@ -48,7 +47,7 @@ public:
     
     void prettyPrint(BNode<T>* p, int indent);
     
-    void verificarArbol(RedBlackTree<T> * arbol);
+    void verificarArbol();
 };
 
 template<class T>
@@ -93,7 +92,6 @@ BNode<T> * RedBlackTree<T>::sibling(BNode<T> * nodo)
 template<class T>
 BNode<T> * RedBlackTree<T>::maximum_node(BNode<T> * nodo)
 {
-    assert (nodo != nullptr);
     while (nodo->getRight() != nullptr)
     {
         nodo = nodo->getRight();
@@ -102,12 +100,12 @@ BNode<T> * RedBlackTree<T>::maximum_node(BNode<T> * nodo)
 }
 
 template<class T>
-void RedBlackTree<T>::verifyProperties(RedBlackTree * arbol)
+void RedBlackTree<T>::verifyProperties()
 {
-    verifyProperty1(arbol->getRoot());
-    verifyProperty2(arbol->getRoot());
-    verifyProperty3(arbol->getRoot());
-    verifyProperty4(arbol->getRoot());
+    verifyProperty1(this->getRoot());
+    verifyProperty2(this->getRoot());
+    verifyProperty3(this->getRoot());
+    verifyProperty4(this->getRoot());
 }
 
 template<class T>
@@ -115,9 +113,7 @@ void RedBlackTree<T>::verifyProperty1(BNode<T> * nodo)
 {
     if(nodo == nullptr)
         return;
-    
-    assert(nodo->getColor() == "negro" || nodo->getColor() == "rojo");
-    
+
     verifyProperty1(nodo->getLeft());
     verifyProperty1(nodo->getRight());
 }
@@ -125,7 +121,7 @@ void RedBlackTree<T>::verifyProperty1(BNode<T> * nodo)
 template<class T>
 void RedBlackTree<T>::verifyProperty2(BNode<T> * nodo)
 {
-    assert(color(nodo) == "negro");
+    
 }
 
 template<class T>
@@ -133,14 +129,6 @@ void RedBlackTree<T>::verifyProperty3(BNode<T> * nodo)
 {
     if (nodo == nullptr)
         return;
-    
-    if (color(nodo) == "rojo")
-    {
-        assert(color(nodo->getLeft()) == "negro");
-        assert(color(nodo->getRight()) == "negro");
-        assert(color(nodo->getParent()) == "negro");
-    }
-    
     verifyProperty3(nodo->getLeft());
     verifyProperty3(nodo->getRight());
 }
@@ -159,12 +147,12 @@ template <class T>
 void RedBlackTree<T>::verifyProperty4Helper(BNode<T> * nodo, int contNegros, int& blackPath)
 {
     std::string color;
-    
-    
-    if (nodo != nullptr) {
+    if (nodo != nullptr)
+    {
         color = nodo->getColor();
     }
-    else{
+    else
+    {
         color = "";
     }
     
@@ -203,140 +191,191 @@ std::string RedBlackTree<T>::color(BNode<T> * nodo)
 }
 
 template<class T>
-void RedBlackTree<T>::rotateLeft(RedBlackTree * arbol, BNode<T> * node_x)
+void RedBlackTree<T>::rotateLeft(BNode<T> * nodeL)
 {
-    BNode<T> *node_y;
+    BNode<T> *nodeR;
     
-    if(node_x->getRight() == NULL){
+    if(nodeL->getRight() == nullptr)
+    {
         return;
     }
     
-    node_y = node_x->getRight();
+    nodeR = nodeL->getRight();
     
-    if(node_y->getLeft() != NULL){
-        node_y->getLeft()->setParent(node_x);
-        node_x->setRight(node_y->getLeft());
+    if(nodeR->getLeft() != nullptr)
+    {
+        nodeR->getLeft()->setParent(nodeL);
+        nodeL->setRight(nodeR->getLeft());
     }
     
-    node_y->setParent(node_x->getParent());
+    nodeR->setParent(nodeL->getParent());
     
-    if(node_x->getParent() == NULL){
-        this->setRoot(node_y);
-    }else if(node_x == node_x->getParent()->getLeft()){
-        node_x->getParent()->setLeft(node_y);
-    }else{
-        node_x->getParent()->setRight(node_y);
+    if(nodeL->getParent() == nullptr)
+    {
+        this->setRoot(nodeR);
+    }
+    else if(nodeL == nodeL->getParent()->getLeft())
+    {
+        nodeL->getParent()->setLeft(nodeR);
+    }
+    else{
+        
+        nodeL->getParent()->setRight(nodeR);
     }
     
-    node_x->setRight(node_y->getLeft());
-    node_y->setLeft(node_x);
-    node_x->setParent(node_y);
+    nodeL->setRight(nodeR->getLeft());
+    nodeR->setLeft(nodeL);
+    nodeL->setParent(nodeR);
 }
 
 template<class T>
-void RedBlackTree<T>::rotateRight(RedBlackTree * arbol, BNode<T> * node_y)
+void RedBlackTree<T>::rotateRight(BNode<T> * nodeR)
 {
-    BNode<T> *node_x;
+    BNode<T> *nodeL;
     
-    if(node_y->getLeft() == NULL){
+    if(nodeR->getLeft() == nullptr)
+    {
         return;
     }
     
-    node_x = node_y->getLeft();
+    nodeL = nodeR->getLeft();
     
-    if(node_x->getRight() != NULL){
-        node_x->getRight()->setParent(node_y);
-        node_y->setLeft(node_x->getRight());
+    if(nodeL->getRight() != nullptr)
+    {
+        nodeL->getRight()->setParent(nodeR);
+        nodeR->setLeft(nodeL->getRight());
     }
     
-    node_x->setParent(node_y->getParent());
+    nodeL->setParent(nodeR->getParent());
     
-    if(node_y->getParent() == NULL){
-        this->setRoot(node_x);
-    }else if(node_y == node_y->getParent()->getLeft()){
-        node_y->getParent()->setLeft(node_x);
-    }else{
-        node_y->getParent()->setRight(node_x);
+    if(nodeR->getParent() == nullptr)
+    {
+        this->setRoot(nodeL);
+    }
+    else if(nodeR == nodeR->getParent()->getLeft())
+    {
+        nodeR->getParent()->setLeft(nodeL);
+    }
+    else
+    {
+        nodeR->getParent()->setRight(nodeL);
     }
     
-    node_y->setLeft(node_x->getRight());
-    node_x->setRight(node_y);
-    node_y->setParent(node_x);
+    nodeR->setLeft(nodeL->getRight());
+    nodeL->setRight(nodeR);
+    nodeR->setParent(nodeL);
 }
 
 template<class T>
 void RedBlackTree<T>::RBinsert(T valor)
 {
-    BNode<T> * nodo = this->insert(valor);//De arbolbinbusq
+    BNode<T> * nodo = this->insert(valor);
     nodo->setColor("rojo");
-    insertCase1(this, nodo);
-    verifyProperties(this);
-    
+    if(nodo->getParent() == nullptr)
+        nodo->setColor("negro");
+    else
+    {
+        if(nodo->getParent()->getColor() == "negro")
+            return;
+        else
+        {
+            if(color(uncle(nodo)) == "rojo")
+            {
+                nodo->getParent()->setColor("negro");
+                uncle(nodo)->setColor("negro");
+                grandparent(nodo)->setColor("rojo");
+                insertCase1(grandparent(nodo));
+            }
+            else
+            {
+                if(nodo == nodo->getParent()->getRight() && nodo->getParent() == grandparent(nodo)->getLeft())
+                {
+                    rotateLeft(nodo->getParent());
+                    nodo = nodo->getLeft();
+                }
+                else if(nodo == nodo->getParent()->getLeft() && nodo->getParent() == grandparent(nodo)->getRight())
+                {
+                    rotateRight(nodo->getParent());
+                    nodo = nodo->getRight();
+                }
+                nodo->getParent()->setColor("negro");
+                grandparent(nodo)->setColor("rojo");
+                if (nodo == nodo->getParent()->getLeft() && nodo->getParent() == grandparent(nodo)->getLeft())
+                {
+                    rotateRight(grandparent(nodo));
+                }
+                else
+                {
+                    rotateLeft(grandparent(nodo));
+                }
+            }
+        }
+    }
+    verifyProperties();
 }
 
 template<class T>
-void RedBlackTree<T>::insertCase1(RedBlackTree * arbol, BNode<T> * nodo)
+void RedBlackTree<T>::insertCase1(BNode<T> * nodo)
 {
     if(nodo->getParent() == nullptr)
         nodo->setColor("negro");
     else
-        insertCase2(this, nodo);
+        insertCase2(nodo);
 }
 
 template<class T>
-void RedBlackTree<T>::insertCase2(RedBlackTree * arbol, BNode<T> * nodo)
+void RedBlackTree<T>::insertCase2(BNode<T> * nodo)
 {
     if(nodo->getParent()->getColor() == "negro")
         return;
     else
-        insertCase3(this, nodo);
+        insertCase3(nodo);
 }
 
 template<class T>
-void RedBlackTree<T>::insertCase3(RedBlackTree * arbol, BNode<T> * nodo)
+void RedBlackTree<T>::insertCase3(BNode<T> * nodo)
 {
     if(color(uncle(nodo)) == "rojo")
     {
         nodo->getParent()->setColor("negro");
         uncle(nodo)->setColor("negro");
         grandparent(nodo)->setColor("rojo");
-        insertCase1(arbol, grandparent(nodo));
+        insertCase1(grandparent(nodo));
     }
     else
     {
-        insertCase4(arbol, nodo);
+        insertCase4(nodo);
     }
 }
 
 template<class T>
-void RedBlackTree<T>::insertCase4(RedBlackTree * arbol, BNode<T> * nodo)
+void RedBlackTree<T>::insertCase4(BNode<T> * nodo)
 {
     if(nodo == nodo->getParent()->getRight() && nodo->getParent() == grandparent(nodo)->getLeft())
     {
-        rotateLeft(arbol, nodo->getParent());
+        rotateLeft(nodo->getParent());
         nodo = nodo->getLeft();
     }
     else if(nodo == nodo->getParent()->getLeft() && nodo->getParent() == grandparent(nodo)->getRight())
     {
-        rotateRight(arbol, nodo->getParent());
+        rotateRight(nodo->getParent());
         nodo = nodo->getRight();
     }
-    insertCase5(arbol, nodo);
+    insertCase5(nodo);
 }
 
 template<class T>
-void RedBlackTree<T>::insertCase5(RedBlackTree * arbol, BNode<T> * nodo)
+void RedBlackTree<T>::insertCase5(BNode<T> * nodo)
 {
     nodo->getParent()->setColor("negro");
     grandparent(nodo)->setColor("rojo");
     if (nodo == nodo->getParent()->getLeft() && nodo->getParent() == grandparent(nodo)->getLeft())
     {
-        rotateRight(arbol, grandparent(nodo));
+        rotateRight(grandparent(nodo));
     }
     else
     {
-        assert(nodo == nodo->getParent()->getRight() && nodo->getParent() == grandparent(nodo)->getRight());
-        rotateLeft(arbol, grandparent(nodo));
+        rotateLeft(grandparent(nodo));
     }
 }
 
@@ -355,7 +394,6 @@ void RedBlackTree<T>::RBdelete(T valor)
         nodo->setInfo(pred->getInfo());
         nodo = pred;
     }
-    assert(nodo->getLeft() == NULL || nodo->getRight() == nullptr);
     hijo = nodo->getRight() == nullptr ? nodo->getLeft()  : nodo->getRight();
     if (color(nodo) == "negro")
     {
@@ -380,7 +418,7 @@ void RedBlackTree<T>::RBdelete(T valor)
         hijo->setParent(nodo->getParent());
     }
     delete nodo;
-    verifyProperties(this);
+    verifyProperties();
 }
 
 template <class T>
@@ -400,9 +438,9 @@ void RedBlackTree<T>::deleteCase2(RedBlackTree * arbol, BNode<T> * nodo)
         nodo->getParent()->setColor("rojo");
         sibling(nodo)->setColor("negro");
         if (nodo == nodo->getParent()->getLeft())
-            rotateLeft(this, nodo->getParent());
+            rotateLeft(nodo->getParent());
         else
-            rotateRight(this, nodo->getParent());
+            rotateRight(nodo->getParent());
     }
     deleteCase3(this, nodo);
 }
@@ -441,14 +479,14 @@ void RedBlackTree<T>::deleteCase5(RedBlackTree * arbol, BNode<T> * nodo)
     {
         sibling(nodo)->setColor("rojo");
         sibling(nodo)->getLeft()->setColor("negro");
-        rotateRight(this, sibling(nodo));
+        rotateRight(sibling(nodo));
     }
     else if (nodo == nodo->getParent()->getRight() && color(sibling(nodo)) == "negro" &&
              color(sibling(nodo)->getRight()) == "rojo" && color(sibling(nodo)->getLeft()) == "negro")
     {
         sibling(nodo)->setColor("rojo");
         sibling(nodo)->getRight()->setColor("negro");
-        rotateLeft(this, sibling(nodo));
+        rotateLeft(sibling(nodo));
     }
     deleteCase6(this, nodo);
 }
@@ -460,15 +498,13 @@ void RedBlackTree<T>::deleteCase6(RedBlackTree * arbol, BNode<T> * nodo)
     nodo->getParent()->setColor("negro");
     if (nodo == nodo->getParent()->getLeft())
     {
-        assert(color(sibling(nodo)->getRight()) == "rojo");
         sibling(nodo)->getRight()->setColor("negro");
-        rotateLeft(this, nodo->getParent());
+        rotateLeft(nodo->getParent());
     }
     else
     {
-        assert(color(sibling(nodo)->getLeft()) == "rojo");
         sibling(nodo)->getLeft()->setColor("negro");
-        rotateRight(this, nodo->getParent());
+        rotateRight(nodo->getParent());
     }
 }
 
@@ -492,9 +528,9 @@ void RedBlackTree<T>::prettyPrint(BNode<T>* p, int indent)
 }
 
 template<class T>
-void RedBlackTree<T>::verificarArbol(RedBlackTree<T> * arbol)
+void RedBlackTree<T>::verificarArbol()
 {
-    verifyProperties(arbol);
+    verifyProperties();
     std::cout << "Sí es RojiNegro" << std::endl;
 }
 

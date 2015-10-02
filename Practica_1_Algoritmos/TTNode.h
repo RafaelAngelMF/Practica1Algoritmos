@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 alexis matuk. All rights reserved.
 //
 
-#ifndef Practica_1_Algoritmos_TTNode_h
-#define Practica_1_Algoritmos_TTNode_h
+#ifndef TTNode_h
+#define TTNode_h
 
 template <class T>
 class TTNode{
@@ -112,9 +112,6 @@ public:
     
     bool isFull()
     {
-        //        if(higher != nullptr && smaller != nullptr)
-        //            return true;
-        //        return false;
         if(higher && smaller)
             return true;
         return false;
@@ -127,29 +124,21 @@ public:
     
     void setValue(T _value)
     {
-        //std::cout << "Parsing " << _value << std::endl;
-        //std::cout << "entrando a setValue" << std::endl;
         if(!smaller)
         {
-            //std::cout << "creando smaller" << std::endl;
             smaller = new T(_value);
-            //std::cout << "valor actual de smaller " << *smaller << std::endl;
         }
         else
         {
-            //std::cout << "ya hay smaller, que es "<< *smaller << std::endl;
             if(_value >= *smaller)
             {
-                //std::cout << "El valor es mayor a smaller" << std::endl;
                 if(!higher)
                 {
-                    //std::cout << "creando higher" << std::endl;
                     higher = new T(_value);
                 }
             }
             else if(_value < *smaller)
             {
-                //std::cout << "Value es menor a smaller, swapeando" << std::endl;
                 higher = new T(*smaller);
                 *smaller = _value;
             }

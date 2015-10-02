@@ -6,15 +6,15 @@
 //  Copyright (c) 2015 alexis matuk. All rights reserved.
 //
 
-#ifndef Practica_1_Algoritmos_Showcases_h
-#define Practica_1_Algoritmos_Showcases_h
+#ifndef Showcases_h
+#define Showcases_h
 #include <iostream>
 #include <iterator>
 #include <cstring>
 #include <chrono>
 #include "TTTree.h"
 #include "RedBlackTree.h"
-#include "ArbolB.h"
+#include "BTree.h"
 #include "AVLTree.h"
 template <class T>
 void showcaseAVL(AVLTree<T>* avlTree)
@@ -179,11 +179,8 @@ void showcaseRedBlack(RedBlackTree<T>* redBlackTree)
         std::cout << "4) Buscar Dato" << std::endl;
         std::cout << "5) Imprimir ascendentemente" << std::endl;
         std::cout << "6) Imprimir descendentemente" << std::endl;
-        std::cout << "7) Obtener la altura de un nodo" << std::endl;
-        std::cout << "8) Obtener la profundidad de un nodo" << std::endl;
-        std::cout << "9) Obtener el nivel de un nodo" << std::endl;
-        std::cout << "10) Verificar si el árbol es AVL" << std::endl;
-        std::cout << "11) Salir" << std::endl;
+        std::cout << "7) Verificar si el árbol es RojiNegro" << std::endl;
+        std::cout << "8) Salir" << std::endl;
         std::cout << "Elige una opción: ";
         while(!(std::cin >> choice)){
             std::cin.clear();
@@ -209,8 +206,8 @@ void showcaseRedBlack(RedBlackTree<T>* redBlackTree)
                 std::cout << "Insertando 68" << std::endl;
                 redBlackTree->RBinsert(68);
                 std::cout << "=======Borrado=======" << std::endl;
-                std::cout << "Borrando 7" << std::endl;
-                redBlackTree->RBdelete(7);
+                std::cout << "Borrando 57" << std::endl;
+                redBlackTree->RBdelete(57);
                 std::cout << "=======Búsqueda=======" << std::endl;
                 redBlackTree->search(35) ? std::cout << "Se encontró 35" << std::endl : std::cout << "No se encontró 35" << std::endl;
                 redBlackTree->search(100) ? std::cout << "Se encontró 100" << std::endl : std::cout << "No se encontró 100" << std::endl;
@@ -225,7 +222,7 @@ void showcaseRedBlack(RedBlackTree<T>* redBlackTree)
                 std::cout << "=======Nivel=======" << std::endl;
                 std::cout << "Nivel de 1: " << redBlackTree->getLevel(redBlackTree->search(1)) << std::endl;
                 std::cout << "=======Verificación=======" << std::endl;
-                redBlackTree->verificarArbol(redBlackTree);
+                redBlackTree->verificarArbol();
                 break;}
             case 2:{
                 int val;
@@ -268,42 +265,9 @@ void showcaseRedBlack(RedBlackTree<T>* redBlackTree)
                 redBlackTree->reverseInOrder();
                 break;}
             case 7:{
-                int val;
-                std::cout << "Nodo a evaluar: ";
-                while(!(std::cin >> val)){
-                    std::cin.clear();
-                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                    std::cout << "Entrada inválida, intenta otra vez: ";
-                }
-                BNode<T>* node = redBlackTree->search(val);
-                std::cout << "Altura: " << redBlackTree->getHeight(node) << std::endl;
+                redBlackTree->verificarArbol();
                 break;}
             case 8:{
-                int val;
-                std::cout << "Nodo a evaluar: ";
-                while(!(std::cin >> val)){
-                    std::cin.clear();
-                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                    std::cout << "Entrada inválida, intenta otra vez: ";
-                }
-                BNode<T>* node = redBlackTree->search(val);
-                std::cout << "Profundidad: " << redBlackTree->getDepth(node) << std::endl;
-                break;}
-            case 9:{
-                int val;
-                std::cout << "Nodo a evaluar: ";
-                while(!(std::cin >> val)){
-                    std::cin.clear();
-                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                    std::cout << "Entrada inválida, intenta otra vez: ";
-                }
-                BNode<T>* node = redBlackTree->search(val);
-                std::cout << "Nivel: " << redBlackTree->getLevel(node) << std::endl;
-                break;}
-            case 10:{
-                redBlackTree->verificarArbol(redBlackTree);
-                break;}
-            case 11:{
                 std::cout << "Adios!" << std::endl;
                 done = true;
                 break;}
@@ -361,9 +325,9 @@ void showcaseTT(TTTree<T>* twoThreeTree)
                 twoThreeTree->searchForNode(20) ? std::cout << "Se encontró 20" << std::endl : std::cout << "No se encontró 20" << std::endl;
                 twoThreeTree->searchForNode(100) ? std::cout << "Se encontró 100" << std::endl : std::cout << "No se encontró 100" << std::endl;
                 std::cout << "=======Impresión ascendente=======" << std::endl;
-                twoThreeTree->print23();
+                twoThreeTree->printAsc();
                 std::cout << "=======Impresión descendente=======" << std::endl;
-                //twoThreeTree->reverseInOrder();
+                twoThreeTree->printDesc();
                 std::cout << "=======Verificación=======" << std::endl;
                 twoThreeTree->isTT() ? std::cout << "Sí es 2-3!" << std::endl : std::cout << "No es 2-3" << std::endl;
                 break;}
@@ -401,11 +365,11 @@ void showcaseTT(TTTree<T>* twoThreeTree)
                 break;}
             case 5:{
                 std::cout << "==============Árbol ascendente==============" << std::endl;
-                twoThreeTree->print23();
+                twoThreeTree->printAsc();
                 break;}
             case 6:{
                 std::cout << "==============Árbol descendente==============" << std::endl;
-                //twoThreeTree->reverseInOrder();
+                twoThreeTree->printDesc();
                 break;}
             case 7:{
                 twoThreeTree->isTT() ? std::cout << "Sí es 2-3!" << std::endl : std::cout << "No es 2-3" << std::endl;
@@ -423,9 +387,113 @@ void showcaseTT(TTTree<T>* twoThreeTree)
 }
 
 template <class T>
-void showcaseB(ArbolB<T>* bTree)
+void showcaseB(BTree<T>* bTree)
 {
-    
+    int choice;
+    bool done = false;
+    while(!done)
+    {
+        std::cout << "===== Árbol B ===== " << std::endl;
+        std::cout << "1) Mostrar ejemplo de funcionamiento" << std::endl;
+        std::cout << "2) Insertar Dato" << std::endl;
+        std::cout << "3) Borrar Dato" << std::endl;
+        std::cout << "4) Buscar Dato" << std::endl;
+        std::cout << "5) Imprimir ascendentemente" << std::endl;
+        std::cout << "6) Imprimir descendentemente" << std::endl;
+        std::cout << "7) Verificar si el árbol es AVL" << std::endl;
+        std::cout << "8) Salir" << std::endl;
+        std::cout << "Elige una opción: ";
+        while(!(std::cin >> choice)){
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "Entrada inválida, intenta otra vez: ";
+        }
+        switch(choice)
+        {
+            case 1:{
+                std::cout << "=======Inserción=======" << std::endl;
+                std::cout << "Insertando 35" << std::endl;
+                bTree->Insert(35);
+                std::cout << "Insertando 7" << std::endl;
+                bTree->Insert(7);
+                std::cout << "Insertando 10" << std::endl;
+                bTree->Insert(10);
+                std::cout << "Insertando 1" << std::endl;
+                bTree->Insert(1);
+                std::cout << "Insertando 57" << std::endl;
+                bTree->Insert(57);
+                std::cout << "Insertando 33" << std::endl;
+                bTree->Insert(33);
+                std::cout << "Insertando 68" << std::endl;
+                bTree->Insert(68);
+                std::cout << "=======Borrado=======" << std::endl;
+                bTree->printNodes();
+                std::cout << "Borrando 7" << std::endl;
+                bTree->Delete(7);
+                std::cout << "=======Búsqueda=======" << std::endl;
+                bTree->searchForNode(35) ? std::cout << "Se encontró 35" << std::endl : std::cout << "No se encontró 35" << std::endl;
+                bTree->searchForNode(100) ? std::cout << "Se encontró 100" << std::endl : std::cout << "No se encontró 100" << std::endl;
+                std::cout << "=======Impresión ascendente=======" << std::endl;
+                bTree->printAsc();
+                std::cout << "=======Impresión descendente=======" << std::endl;
+                bTree->printDesc();
+                std::cout << "=======Verificación=======" << std::endl;
+                bTree->isBTree() ? std::cout << "Sí es árbol B!" << std::endl : std::cout << "No es árbol B" << std::endl;
+                //std::cout << bTree->getLevel() << std::endl;
+                
+                break;}
+            case 2:{
+                int val;
+                std::cout << "Valor a insertar: ";
+                while(!(std::cin >> val)){
+                    std::cin.clear();
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    std::cout << "Entrada inválida, intenta otra vez: ";
+                }
+                bTree->Insert(val);
+                std::cout << "Valor insertado correctamente..." << std::endl;
+                break;}
+            case 3:{
+                int val;
+                std::cout << "Valor a borrar: ";
+                while(!(std::cin >> val)){
+                    std::cin.clear();
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    std::cout << "Entrada inválida, intenta otra vez: ";
+                }
+                bTree->Delete(val);
+                std::cout << "Valor borrado correctamente..." << std::endl;
+                break;}
+            case 4:{
+                int val;
+                std::cout << "Valor a buscar: ";
+                while(!(std::cin >> val)){
+                    std::cin.clear();
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    std::cout << "Entrada inválida, intenta otra vez: ";
+                }
+                bTree->searchForNode(val) ? std::cout << "Valor encontrado!" << std::endl : std::cout << "Valor no encontrado" << std::endl;
+                break;}
+            case 5:{
+                std::cout << "==============Árbol ascendente==============" << std::endl;
+                bTree->printAsc();
+                break;}
+            case 6:{
+                std::cout << "==============Árbol descendente==============" << std::endl;
+                bTree->printDesc();
+                break;}
+            case 7:{
+                //bTree->verificarArbol(bTree) ? std::cout << "Sí es árbol B!" << std::endl : std::cout << "No es árbol B" << std::endl;
+                break;}
+            case 8:{
+                std::cout << "Adios!" << std::endl;
+                done = true;
+                break;}
+            default:
+                std::cout << "Opción inválida, elige otra" << std::endl;
+                break;
+        }
+    }
 }
 
 #endif

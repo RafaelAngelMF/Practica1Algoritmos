@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 alexis matuk. All rights reserved.
 //
 
-#ifndef Practica_1_Algoritmos_BinarySearchTree_h
-#define Practica_1_Algoritmos_BinarySearchTree_h
+#ifndef BinarySearchTree_h
+#define BinarySearchTree_h
 
 #include "BinaryTree.h"
 

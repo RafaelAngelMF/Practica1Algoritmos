@@ -68,11 +68,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/TTTree.h"
-            timestampString = "465449479.527639"
+            timestampString = "465458770.021427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
             landmarkName = "split(TTNode&lt;T&gt;* container)"
             landmarkType = "7">
          </BreakpointContent>
@@ -84,11 +84,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/TTTree.h"
-            timestampString = "465449479.527639"
+            timestampString = "465458770.021427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "980"
-            endingLineNumber = "980">
+            startingLineNumber = "838"
+            endingLineNumber = "838">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -98,11 +98,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/TTTree.h"
-            timestampString = "465449479.527639"
+            timestampString = "465458770.021427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "883"
-            endingLineNumber = "883"
+            startingLineNumber = "741"
+            endingLineNumber = "741"
             landmarkName = "findNodeToDelete(TTNode&lt;T&gt;* node, T value)"
             landmarkType = "7">
          </BreakpointContent>
@@ -114,11 +114,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/TTTree.h"
-            timestampString = "465449479.527639"
+            timestampString = "465458770.021427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "905"
-            endingLineNumber = "905"
+            startingLineNumber = "763"
+            endingLineNumber = "763"
             landmarkName = "findNodeToDelete(TTNode&lt;T&gt;* node, T value)"
             landmarkType = "7">
          </BreakpointContent>
@@ -130,11 +130,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/TTTree.h"
-            timestampString = "465449479.527639"
+            timestampString = "465458770.021427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "886"
-            endingLineNumber = "886"
+            startingLineNumber = "744"
+            endingLineNumber = "744"
             landmarkName = "findNodeToDelete(TTNode&lt;T&gt;* node, T value)"
             landmarkType = "7">
          </BreakpointContent>
@@ -146,11 +146,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/TTTree.h"
-            timestampString = "465449479.527639"
+            timestampString = "465458770.021427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "884"
-            endingLineNumber = "884"
+            startingLineNumber = "742"
+            endingLineNumber = "742"
             landmarkName = "findNodeToDelete(TTNode&lt;T&gt;* node, T value)"
             landmarkType = "7">
          </BreakpointContent>
@@ -162,11 +162,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/TTTree.h"
-            timestampString = "465449479.527639"
+            timestampString = "465458770.021427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "486"
-            endingLineNumber = "486"
+            startingLineNumber = "344"
+            endingLineNumber = "344"
             landmarkName = "searchForNode(const T value, TTNode&lt;T&gt; * node)"
             landmarkType = "7">
          </BreakpointContent>
@@ -178,11 +178,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/TTTree.h"
-            timestampString = "465449479.527639"
+            timestampString = "465458770.021427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "592"
-            endingLineNumber = "592"
+            startingLineNumber = "450"
+            endingLineNumber = "450"
             landmarkName = "fixTree(TTNode&lt;T&gt;* node)"
             landmarkType = "7">
          </BreakpointContent>
@@ -194,11 +194,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/TTTree.h"
-            timestampString = "465449479.527639"
+            timestampString = "465458770.021427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "796"
-            endingLineNumber = "796"
+            startingLineNumber = "654"
+            endingLineNumber = "654"
             landmarkName = "fixTree(TTNode&lt;T&gt;* node)"
             landmarkType = "7">
          </BreakpointContent>
@@ -210,11 +210,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/TTTree.h"
-            timestampString = "465449479.527639"
+            timestampString = "465458770.021427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "615"
-            endingLineNumber = "615"
+            startingLineNumber = "473"
+            endingLineNumber = "473"
             landmarkName = "fixTree(TTNode&lt;T&gt;* node)"
             landmarkType = "7">
          </BreakpointContent>
@@ -226,11 +226,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/TTTree.h"
-            timestampString = "465449479.527639"
+            timestampString = "465458770.021427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "629"
-            endingLineNumber = "629"
+            startingLineNumber = "487"
+            endingLineNumber = "487"
             landmarkName = "fixTree(TTNode&lt;T&gt;* node)"
             landmarkType = "7">
          </BreakpointContent>
@@ -242,11 +242,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/TTTree.h"
-            timestampString = "465449479.527639"
+            timestampString = "465458770.021427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "872"
-            endingLineNumber = "872">
+            startingLineNumber = "730"
+            endingLineNumber = "730">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -256,11 +256,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/TTTree.h"
-            timestampString = "465449479.527639"
+            timestampString = "465458770.021427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "662"
-            endingLineNumber = "662"
+            startingLineNumber = "520"
+            endingLineNumber = "520"
             landmarkName = "fixTree(TTNode&lt;T&gt;* node)"
             landmarkType = "7">
          </BreakpointContent>
@@ -272,11 +272,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/TTTree.h"
-            timestampString = "465449479.527639"
+            timestampString = "465458770.021427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "863"
-            endingLineNumber = "863"
+            startingLineNumber = "721"
+            endingLineNumber = "721"
             landmarkName = "getInorderSuccesor(TTNode&lt;T&gt;* node)"
             landmarkType = "7">
          </BreakpointContent>
@@ -288,11 +288,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/TTTree.h"
-            timestampString = "465449479.527639"
+            timestampString = "465458770.021427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "875"
-            endingLineNumber = "875"
+            startingLineNumber = "733"
+            endingLineNumber = "733"
             landmarkName = "findNodeToDelete(TTNode&lt;T&gt;* node, T value)"
             landmarkType = "7">
          </BreakpointContent>
@@ -304,11 +304,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/TTTree.h"
-            timestampString = "465449479.527639"
+            timestampString = "465458770.021427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "826"
-            endingLineNumber = "826"
+            startingLineNumber = "684"
+            endingLineNumber = "684"
             landmarkName = "deleteNode(T value)"
             landmarkType = "7">
          </BreakpointContent>
@@ -320,11 +320,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/TTTree.h"
-            timestampString = "465449479.527639"
+            timestampString = "465458770.021427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "807"
-            endingLineNumber = "807"
+            startingLineNumber = "665"
+            endingLineNumber = "665"
             landmarkName = "fixTree(TTNode&lt;T&gt;* node)"
             landmarkType = "7">
          </BreakpointContent>
@@ -336,11 +336,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/TTTree.h"
-            timestampString = "465449479.527639"
+            timestampString = "465458770.021427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "772"
-            endingLineNumber = "772"
+            startingLineNumber = "630"
+            endingLineNumber = "630"
             landmarkName = "fixTree(TTNode&lt;T&gt;* node)"
             landmarkType = "7">
          </BreakpointContent>
@@ -352,11 +352,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/TTTree.h"
-            timestampString = "465449479.527639"
+            timestampString = "465458770.021427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "731"
-            endingLineNumber = "731"
+            startingLineNumber = "589"
+            endingLineNumber = "589"
             landmarkName = "fixTree(TTNode&lt;T&gt;* node)"
             landmarkType = "7">
          </BreakpointContent>
@@ -368,11 +368,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/TTTree.h"
-            timestampString = "465449479.527639"
+            timestampString = "465458770.021427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "712"
-            endingLineNumber = "712"
+            startingLineNumber = "570"
+            endingLineNumber = "570"
             landmarkName = "fixTree(TTNode&lt;T&gt;* node)"
             landmarkType = "7">
          </BreakpointContent>
@@ -384,11 +384,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/TTTree.h"
-            timestampString = "465449479.527639"
+            timestampString = "465458770.021427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "680"
-            endingLineNumber = "680"
+            startingLineNumber = "538"
+            endingLineNumber = "538"
             landmarkName = "fixTree(TTNode&lt;T&gt;* node)"
             landmarkType = "7">
          </BreakpointContent>
@@ -400,11 +400,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/TTTree.h"
-            timestampString = "465449479.527639"
+            timestampString = "465458770.021427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "679"
-            endingLineNumber = "679"
+            startingLineNumber = "537"
+            endingLineNumber = "537"
             landmarkName = "fixTree(TTNode&lt;T&gt;* node)"
             landmarkType = "7">
          </BreakpointContent>
@@ -416,11 +416,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/TTTree.h"
-            timestampString = "465449479.527639"
+            timestampString = "465458770.021427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "681"
-            endingLineNumber = "681"
+            startingLineNumber = "539"
+            endingLineNumber = "539"
             landmarkName = "fixTree(TTNode&lt;T&gt;* node)"
             landmarkType = "7">
          </BreakpointContent>
@@ -432,11 +432,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/TTTree.h"
-            timestampString = "465449479.527639"
+            timestampString = "465458770.021427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "683"
-            endingLineNumber = "683"
+            startingLineNumber = "541"
+            endingLineNumber = "541"
             landmarkName = "fixTree(TTNode&lt;T&gt;* node)"
             landmarkType = "7">
          </BreakpointContent>
@@ -462,11 +462,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/TTTree.h"
-            timestampString = "465449479.527639"
+            timestampString = "465458770.021427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "711"
-            endingLineNumber = "711"
+            startingLineNumber = "569"
+            endingLineNumber = "569"
             landmarkName = "fixTree(TTNode&lt;T&gt;* node)"
             landmarkType = "7">
          </BreakpointContent>
@@ -478,11 +478,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/TTTree.h"
-            timestampString = "465449479.527639"
+            timestampString = "465458770.021427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "713"
-            endingLineNumber = "713"
+            startingLineNumber = "571"
+            endingLineNumber = "571"
             landmarkName = "fixTree(TTNode&lt;T&gt;* node)"
             landmarkType = "7">
          </BreakpointContent>
@@ -550,11 +550,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/TTTree.h"
-            timestampString = "465449479.527639"
+            timestampString = "465458770.021427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "782"
-            endingLineNumber = "782"
+            startingLineNumber = "640"
+            endingLineNumber = "640"
             landmarkName = "fixTree(TTNode&lt;T&gt;* node)"
             landmarkType = "7">
          </BreakpointContent>
@@ -566,11 +566,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Practica_1_Algoritmos/TTTree.h"
-            timestampString = "465449479.527639"
+            timestampString = "465458770.021427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "788"
-            endingLineNumber = "788"
+            startingLineNumber = "646"
+            endingLineNumber = "646"
             landmarkName = "fixTree(TTNode&lt;T&gt;* node)"
             landmarkType = "7">
          </BreakpointContent>
@@ -581,13 +581,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Practica_1_Algoritmos/ArbolB.h"
-            timestampString = "465371244.152195"
+            filePath = "Practica_1_Algoritmos/Showcases.h"
+            timestampString = "465464162.383814"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
-            landmarkName = "print(NodoArbolB&lt;T&gt; &amp; nodo)"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
+            landmarkName = "showcaseRedBlack(RedBlackTree&lt;T&gt;* redBlackTree)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -597,61 +597,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Practica_1_Algoritmos/main.cpp"
-            timestampString = "465448689.156551"
+            filePath = "Practica_1_Algoritmos/BTree.h"
+            timestampString = "465465904.821459"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "main(int argc, const char * argv[])"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Practica_1_Algoritmos/main.cpp"
-            timestampString = "465449479.527639"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "main(int argc, const char * argv[])"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Practica_1_Algoritmos/main.cpp"
-            timestampString = "465448712.85926"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "main(int argc, const char * argv[])"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Practica_1_Algoritmos/main.cpp"
-            timestampString = "465449479.527639"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "main(int argc, const char * argv[])"
+            startingLineNumber = "629"
+            endingLineNumber = "629"
+            landmarkName = "getLevel(BTreeNode&lt;T&gt; &amp; node)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
